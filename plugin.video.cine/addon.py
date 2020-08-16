@@ -195,19 +195,19 @@ def get_categories():
             {'id':9,'name':'麻花资源(mahuazy.net)','link':'mahuazy','author':'zhengfan2014','upload':'2020-6-12','videos':20},
             {'id':10,'name':'最大资源(zuidazy3.net)','link':'zdziyuan','author':'zhengfan2014','upload':'2020-6-12','videos':40},
             {'id':11,'name':'采集资源(caijizy.vip)','link':'caijizy','author':'zhengfan2014','upload':'2020-6-12','videos':35},
-            {'id':13,'name':'哈酷资源(666zy.com)','link':'666zy','author':'zhengfan2014','upload':'2020-6-12','videos':20}]
-
+            {'id':13,'name':'哈酷资源(666zy.com)','link':'666zy','author':'zhengfan2014','upload':'2020-6-12','videos':20}]，
+            {'id':14,'name':'八戒资源网(bajiezy.cc)','link':'bajiezy','author':'tedttt','upload':'2020-8-16','videos':20}]
 ##########################################################
 ###以下是模块，网站模块请粘贴在这里面
 ##########################################################
 
 #138vcd
 def get_138vcd_categories():
-    return [{"name": "电影", "link": "https://www.138vcd.com/vodshow/id/20"},
-          {"name": "连续剧", "link": "https://www.138vcd.com/vodshow/id/21"}, 
-          {"name": "综艺", "link": "https://www.138vcd.com/vodshow/id/22"}, 
-          {"name": "动漫", "link": "https://www.138vcd.com/vodshow/id/23"},
-          {"name": "纪录片", "link": "https://www.138vcd.com/vodshow/id/24"}]
+    return [{"name": "电影", "link": "https://www.138vcd.com/vod/type/id/20"},
+          {"name": "连续剧", "link": "https://www.138vcd.com/vod/type/id/21"}, 
+          {"name": "综艺", "link": "https://www.138vcd.com/vod/type/id/22"}, 
+          {"name": "动漫", "link": "https://www.138vcd.com/vod/type/id/23"},
+          {"name": "纪录片", "link": "https://www.138vcd.com/vod/type/id/24"}]
 
 def get_138vcd_videos(url,page):
     videos = []
@@ -707,6 +707,21 @@ def get_666zy_mp4info(url):
     return get_maccms_xml('http://api.666zy.com/inc/hkm3u8.php',url=url,keyword='douban777')
 
 def get_666zy_mp4(url):
+    return url
+#猪八戒资源
+def get_bajiezy_categories():
+    return get_maccms_xml('http://cj.bajiecaiji.com/inc/seabjm3u8.php',banid='1,2,27,36')
+
+def get_bajiezy_videos(url,page):
+    return get_maccms_xml('http://cj.bajiecaiji.com/inc/seabjm3u8.php',url=url,page=page)
+
+def get_bajiezy_source(url):
+    return get_maccms_xml('http://cj.bajiecaiji.com/inc/seabjm3u8.php',url=url)
+
+def get_bajiezy_mp4info(url):
+    return get_maccms_xml('http://cj.bajiecaiji.com/inc/seabjm3u8.php',url=url,keyword='bajiezy')
+
+def get_bajiezy_mp4(url):
     return url
 
 ########################################################################################################################################
